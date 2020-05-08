@@ -30,7 +30,7 @@ import com.huawei.hms.maps.HuaweiMapOptions;
 
 public class AirMapLiteManager extends AirMapManager {
 
-  private static final String REACT_CLASS = "AIRMapLite";
+  private static final String REACT_CLASS = "AIRMapLiteHms";
 
   @Override
   public String getName() {

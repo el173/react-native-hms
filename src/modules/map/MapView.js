@@ -846,7 +846,7 @@ class MapView extends React.Component {
 
     if (Platform.OS === 'android' && this.props.liteMode) {
       return (
-        <AIRMapLite
+        <AIRMapLiteHms
           ref={ref => {
             this.map = ref;
           }}
@@ -893,12 +893,12 @@ if (Platform.OS === 'android') {
 }
 const getAirMapComponent = provider => airMaps[provider || 'default'];
 
-let AIRMapLite;
+let AIRMapLiteHms;
 if (!NativeModules.UIManager.getViewManagerConfig) {
   // RN < 0.58
-  AIRMapLite =
-    NativeModules.UIManager.AIRMapLite &&
-    requireNativeComponent('AIRMapLite', MapView, {
+  AIRMapLiteHms =
+    NativeModules.UIManager.AIRMapLiteHms &&
+    requireNativeComponent('AIRMapLiteHms', MapView, {
       nativeOnly: {
         onChange: true,
         onMapReady: true,
@@ -907,9 +907,9 @@ if (!NativeModules.UIManager.getViewManagerConfig) {
     });
 } else {
   // RN >= 0.58
-  AIRMapLite =
-    NativeModules.UIManager.getViewManagerConfig('AIRMapLite') &&
-    requireNativeComponent('AIRMapLite', MapView, {
+  AIRMapLiteHms =
+    NativeModules.UIManager.getViewManagerConfig('AIRMapLiteHms') &&
+    requireNativeComponent('AIRMapLiteHms', MapView, {
       nativeOnly: {
         onChange: true,
         onMapReady: true,
