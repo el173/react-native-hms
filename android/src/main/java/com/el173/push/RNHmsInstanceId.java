@@ -45,7 +45,7 @@ public class RNHmsInstanceId extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "HmsInstanceId";
+        return "InstanceId";
     }
 
     @Override

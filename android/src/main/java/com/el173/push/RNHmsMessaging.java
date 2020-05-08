@@ -38,7 +38,7 @@ public class RNHmsMessaging extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "HmsMessaging";
+        return "Messaging";
     }
 
     @Override

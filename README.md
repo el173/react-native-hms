@@ -8,6 +8,8 @@ This wrapper includes;
 * HMS MapKit
 * HMS PushKit
 
+## 🤔🤔🤔<span style="color:red">Looking for Contributors</span>🤔🤔🤔
+
 ## Getting started
 
 `$ npm install @el173/react-native-hms --save`
@@ -138,11 +140,70 @@ isHMS = async () => {
 
 ```
 
+* Analytics Kit
 ```javascript
-// TODO:: usage of other modules
+import HMS from '@el173/react-native-hms';
+
+setHmsEvent = () => {
+	const eventObj={
+		testString:'StrContent',
+		testInt:20,
+		testDouble:2.2,
+		testBoolean:false
+	}
+  	HMS.Analytics.onEvent('newTestEvent',eventObj);
+}
+```
+ 
+Read more about HMS analytics: https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/react-native-development
+
+* MapKit
+
+```javascript
+import HMS from '@el173/react-native-hms';
+
+const MapView = HMS.MapView
+
+<MapView
+    initialRegion={{
+        latitude: 37.78825,
+        longitude:  -122.4324,
+        latitudeDelta:  0.0922,
+        longitudeDelta:  0.0421,
+    }}
+/>
+
 ```
 
+Import other available [map components](https://developer.huawei.com/consumer/en/doc/development/HMS-References/hms-map-v4-sdkoverview-rn)
 
-  
+```javascript
+import {Marker, Polyline, ...} from '@el173/react-native-hms';
+```
+
+* Push Kit
+
+```javascript
+import HMS from '@el173/react-native-hms';
+
+getToken = () => {
+	HMS.InstanceId.getToken( 
+		appid, 
+		'HCM', 
+		(retcode, token) => { 
+		let msg = ''; 
+		if (retcode == 0) { 
+			msg = msg + 'getToken result:' + token + '\n'; 
+		} else { 
+			msg = msg + 'getToken exception, error:' + token + '\n'; 
+		} 
+	});
+}
+
+```
+
+Read more about HMS push: https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/push-rn-dev-guide
+
+
 ## References 
-https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/location-preparation
+https://developer.huawei.com/consumer/en/doc/overview/HMS

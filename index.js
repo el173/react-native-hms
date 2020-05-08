@@ -37,13 +37,15 @@ export {
 const { 
   Utils,
   Analytics,
-  HmsInstanceId,
+  InstanceId,
+  Messaging,
 } = NativeModules;
 
 export default {
   Utils,
   Analytics,
-  HmsInstanceId,
+  InstanceId,
   MapView,
+  Messaging,
 };
 
