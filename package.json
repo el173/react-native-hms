@@ -1,0 +1,35 @@
+
+{
+  "name": "@el173/react-native-hms",
+  "version": "1.0.0",
+  "description": "A React Native wrapper for Huawei Mobile Services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "android",
+    "location",
+    "hms",
+    "hms-map",
+    "hms-location",
+    "pushkit",
+    "hms-push",
+    "react-native-hms",
+    "react-native-hms-push",
+    "react-native-hms-analytics",
+    "react-native-hms-map",
+    "analytics",
+    "hms-analytics"
+  ],
+  "license": "",
+  "author": "EL173 <info.hashith.com>",
+  "bugs": {
+    "url": "https://github.com/el173/react-native-hms/issues"
+  },
+  "homepage": "https://github.com/el173/react-native-hms",
+  "peerDependencies": {
+    "react-native": "^0.61.5"
+  }
+}
