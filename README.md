@@ -4,9 +4,9 @@
 A React Native wrapper for Huawei Mobile Services
 
 This wrapper includes;
-* HMS PushKit
 * HMS AnalyticsKit
 * HMS MapKit
+* HMS PushKit
 
 ## Getting started
 
@@ -93,9 +93,56 @@ implementation 'com.huawei.hms:hianalytics:4.0.1.300'
 -keep class com.huawei.hianalytics.LifeCycleListener{*;}
 ```
 
-## Usage
-```javascript
-// TODO: What to do with the module?
+## HMS Map Kit
+
+### Adding Permissions
+
+* To obtain the current device location, you need to add the following permissions in the AndroidManifest.xml file. In Android 6.0 and later, you need to apply for these permissions dynamically.
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
+
+### Proguard Rules
+
+```pro
+-ignorewarnings
+-keepattributes *Annotation*
+-keepattributes Exceptions
+-keepattributes InnerClasses
+-keepattributes Signature
+-keepattributes SourceFile,LineNumberTable
+-keep class com.hianalytics.android.**{*;}
+-keep class com.huawei.updatesdk.**{*;}
+-keep class com.huawei.hms.**{*;}
+```
+
+## Usage
+
+* Check HMS/GMS Availability
+```javascript
+import HMS from '@el173/react-native-hms';
+
+isGMS = async () => {
+	const isGMS = await HMS.Utils.isGMSAvailable();
+	console.log('Your device is running on Google Mobile Services', isGMS);
+	return isGMS;
+};
+
+isHMS = async () => {
+	const isHMS = await HMS.Utils.isHMSAvailable();
+	console.log('Your device is running on Huawei Mobile Services', isHMS);
+	return isHMS;
+};
+
+```
+
+```javascript
+// TODO:: usage of other modules
+```
+
+
   
-  https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/location-preparation
+## References 
+https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/location-preparation
