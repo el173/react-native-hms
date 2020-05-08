@@ -31,7 +31,7 @@ export const USES_DEFAULT_IMPLEMENTATION = 'USES_DEFAULT_IMPLEMENTATION';
 export const NOT_SUPPORTED = 'NOT_SUPPORTED';
 
 export function getAirMapName(provider) {
-  return 'AIRMap';
+  return 'AIRMapHMS';
 }
 
 function getAirComponentName(provider, component) {

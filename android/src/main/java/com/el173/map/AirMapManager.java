@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
 
 public class AirMapManager extends ViewGroupManager<AirMapView> {
 
-  private static final String REACT_CLASS = "AIRMap";
+  private static final String REACT_CLASS = "AIRMapHMS";
   private static final int ANIMATE_TO_REGION = 1;
   private static final int ANIMATE_TO_COORDINATE = 2;
   private static final int ANIMATE_TO_VIEWING_ANGLE = 3;

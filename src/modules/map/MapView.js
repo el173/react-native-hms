@@ -855,10 +855,10 @@ class MapView extends React.Component {
       );
     }
 
-    const AIRMap = getAirMapComponent(this.props.provider);
+    const AIRMapHMS = getAirMapComponent(this.props.provider);
 
     return (
-      <AIRMap
+      <AIRMapHMS
         ref={ref => {
           this.map = ref;
         }}
@@ -884,7 +884,7 @@ const nativeComponent = Component =>
     },
   });
 const airMaps = {
-  default: nativeComponent('AIRMap'),
+  default: nativeComponent('AIRMapHMS'),
 };
 if (Platform.OS === 'android') {
   airMaps.huawei = airMaps.default;
