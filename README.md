@@ -187,16 +187,16 @@ import {Marker, Polyline, ...} from '@el173/react-native-hms';
 import HMS from '@el173/react-native-hms';
 
 getToken = () => {
-	HMS.HmsInstanceId.getToken( 
+	HMS.InstanceId.getToken( 
 		(retcode, token) => { 
 		let msg = ''; 
 		if (retcode == 0) { 
 			msg = msg + 'getToken result:' + token + '\n'; 
 		} else { 
 			msg = msg + 'getToken exception, error:' + token + '\n'; 
-		} 
+		}
+		console.log(msg);
 	});
-	console.log(msg);
 }
 
 ```
