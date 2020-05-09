@@ -1,7 +1,7 @@
 
 {
   "name": "@el173/react-native-hms",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A React Native wrapper for Huawei Mobile Services",
   "main": "index.js",
   "scripts": {

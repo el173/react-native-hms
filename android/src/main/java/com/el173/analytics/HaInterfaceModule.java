@@ -69,7 +69,7 @@ public class HaInterfaceModule extends ReactContextBaseJavaModule {
 
     public HaInterfaceModule(ReactApplicationContext reactContext) {
         super(reactContext);
-        Log.i( "RNLifeCycle","Module construct");
+        Log.i(TAG,"Module construct");
         LifeCycleListener.init((Application) reactContext.getApplicationContext());
         this.reactContext = reactContext;
         this.instance=HiAnalytics.getInstance(reactContext);
@@ -104,7 +104,7 @@ public class HaInterfaceModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void enableLog(){
-        Log.i("TAG","enable log, default level.");
+        Log.i(TAG,"enable log, default level.");
         HiAnalyticsTools.enableLog();
     }
 
@@ -115,25 +115,25 @@ public class HaInterfaceModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void enableLogWithLevel(String level) {
         if (!level.equals("debug") && !level.equals("info") && !level.equals("warn") && !level.equals("error")) {
-            Log.i("TAG", "enable log, parameter is wrong.");
+            Log.i(TAG, "enable log, parameter is wrong.");
             return;
         }
 
         switch (level) {
             case "debug":
-                Log.i("TAG", "enable log, level: debug.");
+                Log.i(TAG, "enable log, level: debug.");
                 HiAnalyticsTools.enableLog(3);
                 break;
             case "info":
-                Log.i("TAG", "enable log, level: info.");
+                Log.i(TAG, "enable log, level: info.");
                 HiAnalyticsTools.enableLog(4);
                 break;
             case "warn":
-                Log.i("TAG", "enable log, level: warn.");
+                Log.i(TAG, "enable log, level: warn.");
                 HiAnalyticsTools.enableLog(5);
                 break;
             case "error":
-                Log.i("TAG", "enable log, level: error.");
+                Log.i(TAG, "enable log, level: error.");
                 HiAnalyticsTools.enableLog(6);
                 break;
             default:

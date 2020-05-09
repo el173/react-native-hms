@@ -162,7 +162,7 @@ Read more about HMS analytics: https://developer.huawei.com/consumer/en/doc/deve
 ```javascript
 import HMS from '@el173/react-native-hms';
 
-const MapView = HMS.MapView
+const MapView = HMS.MapView;
 
 <MapView
     initialRegion={{
@@ -188,8 +188,6 @@ import HMS from '@el173/react-native-hms';
 
 getToken = () => {
 	HMS.InstanceId.getToken( 
-		appid, 
-		'HCM', 
 		(retcode, token) => { 
 		let msg = ''; 
 		if (retcode == 0) { 
@@ -198,6 +196,7 @@ getToken = () => {
 			msg = msg + 'getToken exception, error:' + token + '\n'; 
 		} 
 	});
+	console.log(msg);
 }
 
 ```
