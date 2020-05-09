@@ -187,7 +187,7 @@ import {Marker, Polyline, ...} from '@el173/react-native-hms';
 import HMS from '@el173/react-native-hms';
 
 getToken = () => {
-	HMS.InstanceId.getToken( 
+	HMS.HmsInstanceId.getToken( 
 		(retcode, token) => { 
 		let msg = ''; 
 		if (retcode == 0) { 
@@ -200,6 +200,7 @@ getToken = () => {
 }
 
 ```
+HMS Push FAQ : https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/push-faq-v4
 
 Read more about HMS push: https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/push-rn-dev-guide
 
