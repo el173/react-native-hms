@@ -106,6 +106,17 @@ implementation 'com.huawei.hms:hianalytics:4.0.1.300'
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
 
+* Import the following class to the MainApplication.java file of your project.
+
+```java
+import com.el173.map.HMSMapsPackage;
+```
+
+* Then add the following line to your getPackages method.
+```java
+packages.add(new HMSMapsPackage());
+```
+
 ### Proguard Rules
 
 ```pro

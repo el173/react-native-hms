@@ -37,11 +37,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class MapsPackage implements ReactPackage {
-  public MapsPackage(Activity activity) {
+public class HMSMapsPackage implements ReactPackage {
+  public HMSMapsPackage(Activity activity) {
   } // backwards compatibility
 
-  public MapsPackage() {
+  public HMSMapsPackage() {
   }
 
   @Override

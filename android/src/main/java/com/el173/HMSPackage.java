@@ -14,8 +14,6 @@ import com.el173.push.RNHmsInstanceId;
 import com.el173.push.RNHmsMessaging;
 import com.el173.push.RNReceiver;
 
-import com.el173.map.MapsPackage;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -31,7 +29,6 @@ public class HMSPackage implements ReactPackage {
         modules.add(new RNHmsInstanceId(reactContext));
         modules.add(new RNHmsMessaging(reactContext));
         modules.add(new RNReceiver(reactContext));
-        modules.add(new MapsPackage(reactContext));
 
         return modules;
     }
