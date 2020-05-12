@@ -54,7 +54,7 @@ public class AirMapLocalTileManager extends ViewGroupManager<AirMapLocalTile> {
 
     @Override
     public String getName() {
-        return "AIRMapLocalTile";
+        return "AIRMapHMSLocalTile";
     }
 
     @Override

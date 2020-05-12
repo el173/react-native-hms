@@ -51,7 +51,7 @@ public class AirMapUrlTileManager extends ViewGroupManager<AirMapUrlTile> {
 
   @Override
   public String getName() {
-    return "AIRMapUrlTile";
+    return "AIRMapHMSUrlTile";
   }
 
   @Override

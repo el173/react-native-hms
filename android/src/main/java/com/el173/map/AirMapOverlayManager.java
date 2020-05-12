@@ -57,7 +57,7 @@ public class AirMapOverlayManager extends ViewGroupManager<AirMapOverlay> {
 
   @Override
   public String getName() {
-    return "AIRMapOverlay";
+    return "AIRMapHMSOverlay";
   }
 
   @Override

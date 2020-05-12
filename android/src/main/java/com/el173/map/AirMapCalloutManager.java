@@ -38,7 +38,7 @@ public class AirMapCalloutManager extends ViewGroupManager<AirMapCallout> {
 
   @Override
   public String getName() {
-    return "AIRMapCallout";
+    return "AIRMapHMSCallout";
   }
 
   @Override

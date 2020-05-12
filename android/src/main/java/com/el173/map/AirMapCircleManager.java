@@ -56,7 +56,7 @@ public class AirMapCircleManager extends ViewGroupManager<AirMapCircle> {
 
   @Override
   public String getName() {
-    return "AIRMapCircle";
+    return "AIRMapHMSCircle";
   }
 
   @Override

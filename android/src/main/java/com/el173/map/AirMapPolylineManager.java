@@ -63,7 +63,7 @@ public class AirMapPolylineManager extends ViewGroupManager<AirMapPolyline> {
 
   @Override
   public String getName() {
-    return "AIRMapPolyline";
+    return "AIRMapHMSPolyline";
   }
 
   @Override

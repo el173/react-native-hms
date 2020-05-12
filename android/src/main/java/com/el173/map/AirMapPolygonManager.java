@@ -58,7 +58,7 @@ public class AirMapPolygonManager extends ViewGroupManager<AirMapPolygon> {
 
   @Override
   public String getName() {
-    return "AIRMapPolygon";
+    return "AIRMapHMSPolygon";
   }
 
   @Override

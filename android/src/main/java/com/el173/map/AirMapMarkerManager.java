@@ -182,7 +182,7 @@ public class AirMapMarkerManager extends ViewGroupManager<AirMapMarker> {
 
   @Override
   public String getName() {
-    return "AIRMapMarker";
+    return "AIRMapHMSMarker";
   }
 
   @Override

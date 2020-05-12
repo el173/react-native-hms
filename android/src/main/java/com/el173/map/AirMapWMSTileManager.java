@@ -54,7 +54,7 @@ public class AirMapWMSTileManager extends ViewGroupManager<AirMapWMSTile> {
 
   @Override
   public String getName() {
-    return "AIRMapWMSTile";
+    return "AIRMapHMSWMSTile";
   }
 
   @Override
