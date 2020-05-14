@@ -59,19 +59,18 @@ public class RNHmsInstanceId extends ReactContextBaseJavaModule {
     public void getToken(Callback callBack) {
         try {
             String appId = AGConnectServicesConfig.fromContext(mContext).getString("client/app_id");
-            String token = HmsInstanceId.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).getToken(appId, "HCM");
+            String token = HmsInstanceId.getInstance(mContext).getToken(appId, "HCM");
             callBack.invoke(Constants.RESULT_SUCESS, token);
             Log.d("token", token);
         } catch (ApiException e) {
             callBack.invoke(e.getStatusCode(), e.getStatusCode());
         }
-
     }
 
     @ReactMethod
     public void getId(Callback callBack) {
         try {
-            String instanceId = HmsInstanceId.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).getId();
+            String instanceId = HmsInstanceId.getInstance(mContext).getId();
             callBack.invoke(Constants.RESULT_SUCESS, instanceId);
         } catch (Exception e) {
             callBack.invoke(Constants.RESULT_FAIL, e.getMessage());
@@ -80,7 +79,7 @@ public class RNHmsInstanceId extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void getAAID(final Callback callBack) {
-        Task<AAIDResult> idResult = HmsInstanceId.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).getAAID();
+        Task<AAIDResult> idResult = HmsInstanceId.getInstance(mContext).getAAID();
         idResult.addOnSuccessListener(new OnSuccessListener<AAIDResult>() {
 
             @Override
@@ -93,13 +92,12 @@ public class RNHmsInstanceId extends ReactContextBaseJavaModule {
                 callBack.invoke(Constants.RESULT_FAIL, e.getMessage());
             }
         });
-
     }
 
     @ReactMethod
     public void getCreationTime(Callback callBack) {
         try {
-            String createTime = HmsInstanceId.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).getCreationTime() + "";
+            String createTime = HmsInstanceId.getInstance(mContext).getCreationTime() + "";
             callBack.invoke(Constants.RESULT_SUCESS, createTime);
         } catch (Exception e) {
             callBack.invoke(Constants.RESULT_FAIL, e.getMessage());
@@ -109,7 +107,7 @@ public class RNHmsInstanceId extends ReactContextBaseJavaModule {
     @ReactMethod
     public void deleteAAID(Callback callBack) {
         try {
-            HmsInstanceId.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).deleteAAID();
+            HmsInstanceId.getInstance(mContext).deleteAAID();
             callBack.invoke(Constants.RESULT_SUCESS);
         } catch (ApiException e) {
             callBack.invoke(e.getStatusCode(), e.getMessage());
@@ -120,12 +118,11 @@ public class RNHmsInstanceId extends ReactContextBaseJavaModule {
     public void deleteToken(Callback callBack) {
         try {
             String appId = AGConnectServicesConfig.fromContext(mContext).getString("client/app_id");
-            HmsInstanceId.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).deleteToken(appId, "HCM");
+            HmsInstanceId.getInstance(mContext).deleteToken(appId, "HCM");
             callBack.invoke(Constants.RESULT_SUCESS);
         } catch (ApiException e) {
             callBack.invoke(e.getStatusCode(), e.getMessage());
         }
-
     }
 
 }

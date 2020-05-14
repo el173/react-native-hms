@@ -50,7 +50,7 @@ public class RNHmsMessaging extends ReactContextBaseJavaModule {
     @ReactMethod
     public void isAutoInitEnabled(Callback callBack) {
         try {
-            String autoInit = HmsMessaging.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).isAutoInitEnabled() + "";
+            String autoInit = HmsMessaging.getInstance(mContext).isAutoInitEnabled() + "";
             callBack.invoke(Constants.RESULT_SUCESS, autoInit);
         } catch (Exception e) {
             callBack.invoke(Constants.RESULT_FAIL, e.getMessage());
@@ -60,7 +60,7 @@ public class RNHmsMessaging extends ReactContextBaseJavaModule {
     @ReactMethod
     public void setAutoInitEnabled(boolean enabled, Callback callBack) {
         try {
-            HmsMessaging.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).setAutoInitEnabled(enabled);
+            HmsMessaging.getInstance(mContext).setAutoInitEnabled(enabled);
             callBack.invoke(Constants.RESULT_SUCESS, enabled);
         } catch (Exception e) {
             callBack.invoke(Constants.RESULT_FAIL, e.getMessage());
@@ -70,7 +70,7 @@ public class RNHmsMessaging extends ReactContextBaseJavaModule {
     @ReactMethod
     public void turnOnPush(final Callback callBack) {
         try {
-            HmsMessaging.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).turnOnPush().addOnCompleteListener(new OnCompleteListener<Void>() {
+            HmsMessaging.getInstance(mContext).turnOnPush().addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(Task<Void> task) {
                     if (task.isSuccessful()) {
@@ -89,7 +89,7 @@ public class RNHmsMessaging extends ReactContextBaseJavaModule {
     @ReactMethod
     public void turnOffPush(final Callback callBack) {
         try {
-            HmsMessaging.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).turnOffPush().addOnCompleteListener(new OnCompleteListener<Void>() {
+            HmsMessaging.getInstance(mContext).turnOffPush().addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(Task<Void> task) {
                     if (task.isSuccessful()) {
@@ -113,7 +113,7 @@ public class RNHmsMessaging extends ReactContextBaseJavaModule {
             return;
         }
         try {
-            HmsMessaging.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).subscribe(topic).
+            HmsMessaging.getInstance(mContext).subscribe(topic).
                     addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(Task<Void> task) {
@@ -136,7 +136,7 @@ public class RNHmsMessaging extends ReactContextBaseJavaModule {
             return;
         }
         try {
-            HmsMessaging.getInstance(ActivityUtils.getRealActivity(getCurrentActivity(), mContext)).unsubscribe(topic).
+            HmsMessaging.getInstance(mContext).unsubscribe(topic).
                     addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(Task<Void> task) {
