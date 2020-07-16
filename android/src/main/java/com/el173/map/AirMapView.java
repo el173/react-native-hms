@@ -431,7 +431,7 @@ public class AirMapView extends MapView implements HuaweiMap.InfoWindowAdapter, 
 
       @Override
       public void onHostDestroy() {
-        AirMapView.this.doDestroy();
+        
       }
     };
 
@@ -441,26 +441,6 @@ public class AirMapView extends MapView implements HuaweiMap.InfoWindowAdapter, 
   private boolean hasPermissions() {
     return checkSelfPermission(getContext(), PERMISSIONS[0]) == PermissionChecker.PERMISSION_GRANTED
         || checkSelfPermission(getContext(), PERMISSIONS[1]) == PermissionChecker.PERMISSION_GRANTED;
-  }
-
-  /*
-   * onDestroy is final method so I can't override it.
-   */
-  public synchronized void doDestroy() {
-    if (destroyed) {
-      return;
-    }
-    destroyed = true;
-
-    if (lifecycleListener != null && context != null) {
-      context.removeLifecycleEventListener(lifecycleListener);
-      lifecycleListener = null;
-    }
-    if (!paused) {
-      onPause();
-      paused = true;
-    }
-    onDestroy();
   }
 
   public void setInitialRegion(ReadableMap initialRegion) {
