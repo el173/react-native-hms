@@ -65,7 +65,6 @@ import com.huawei.hms.maps.model.BitmapDescriptorFactory;
 import com.huawei.hms.maps.model.LatLng;
 import com.huawei.hms.maps.model.Marker;
 import com.huawei.hms.maps.model.MarkerOptions;
-import com.huawei.hms.maps.util.LogM;
 
 import javax.annotation.Nullable;
 
