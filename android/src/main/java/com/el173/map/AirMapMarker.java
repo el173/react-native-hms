@@ -68,7 +68,6 @@ import com.huawei.hms.maps.model.MarkerOptions;
 
 import javax.annotation.Nullable;
 
-import static com.huawei.hms.maps.model.BitmapDescriptorFactory.sIBitmapDescriptorDelegate;
 
 public class AirMapMarker extends AirMapFeature {
 
