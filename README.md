@@ -194,6 +194,8 @@ import {Marker, Polyline, ...} from '@el173/react-native-hms';
 
 * Push Kit
 
+Generate HCM Token
+
 ```javascript
 import HMS from '@el173/react-native-hms';
 
@@ -202,6 +204,7 @@ getToken = () => {
 		(retcode, token) => { 
 		let msg = ''; 
 		if (retcode == 0) { 
+			// Handle notification here
 			msg = msg + 'getToken result:' + token + '\n'; 
 		} else { 
 			msg = msg + 'getToken exception, error:' + token + '\n'; 
@@ -211,6 +214,49 @@ getToken = () => {
 }
 
 ```
+
+Register HCM notification listener and token change listener 
+
+```javascript
+import {RNRemoteMessage} from '@el173/react-native-hms';
+
+createHCMNotificationListener = onRegister => {
+    const eventEmitter = new NativeEventEmitter(NativeModules.ToastExample);
+    this.listenerHMCPushMsg = eventEmitter.addListener(
+      'PushMsgReceiverEvent',
+      event => {
+        const RNMessageParserSingled = new RNRemoteMessage(event.msg);
+        const msg =
+          RNMessageParserSingled.getData() +
+          '\n' +
+          RNMessageParserSingled.getDataOfMap() +
+          '\n' +
+          RNMessageParserSingled.getMessageId() +
+          '\n';
+        console.log('HCM notification received - ' + msg);
+      },
+    );
+
+    const eventTokenEmitter = new NativeEventEmitter(
+      NativeModules.ToastExample,
+    );
+    this.listenerHCMToken = eventTokenEmitter.addListener(
+      'PushTokenMsgReceiverEvent',
+      event => {
+		// Handle notification here
+        console.log('HCM token changed - ' + event.token);
+      },
+    );
+  }
+
+  unHCMRegister = () => {
+    this.listenerHMCPushMsg();
+    this.listenerHCMToken();
+  };
+}
+
+```
+
 HMS Push FAQ : https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/push-faq-v4
 
 Read more about HMS push: https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/push-rn-dev-guide
